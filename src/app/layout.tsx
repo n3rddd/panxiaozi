@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
+import { StatusBarTheme } from "@/components/status-bar-theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,10 +59,7 @@ export default function RootLayout({
       <head>
         <meta name="application-name" content="盘小子" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="light-content"
-        />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="盘小子" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -119,6 +117,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider>
+          <StatusBarTheme />
           {children}
         </ThemeProvider>
         {process.env.NODE_ENV === "production" && (
