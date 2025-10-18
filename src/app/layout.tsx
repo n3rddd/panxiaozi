@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import { StatusBarTheme } from "@/components/status-bar-theme";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -121,11 +122,19 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         {process.env.NODE_ENV === "production" && (
-          <Script
-            src="https://umami.xiaozi.cc/script.js"
-            data-website-id="3ee3abd4-dbdc-47aa-a0a0-f5defc29d76f"
-            defer
-          />
+          <>
+            <Script
+              src="https://umami.xiaozi.cc/script.js"
+              data-website-id="3ee3abd4-dbdc-47aa-a0a0-f5defc29d76f"
+              defer
+            />
+            <OpenPanelComponent
+              clientId={process.env.OPEN_PANEL_CLIENT_ID as string}
+              trackScreenViews={true}
+              trackAttributes={true}
+              trackOutgoingLinks={true}
+            />
+          </>
         )}
       </body>
     </html>
