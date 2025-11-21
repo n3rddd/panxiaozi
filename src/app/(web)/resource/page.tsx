@@ -3,8 +3,7 @@ import Sidebar from "@/components/sidebar";
 import Pagination from "@/components/pagination";
 import SearchForm from "@/components/search-form";
 import { getResourcePageList } from "@/lib/db/queries/resource";
-import { Metadata } from "next";
-import { Suspense } from "react";
+import type { Metadata } from "next";
 import { getCategoryByKey } from "@/lib/db/queries/category";
 
 export async function generateMetadata({
@@ -17,23 +16,22 @@ export async function generateMetadata({
 
 	if (query) {
 		return {
-			title: `${query}在线网盘资源搜索下载 - 盘小子`,
-			description: `盘小子是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
+			title: `${query}在线网盘资源搜索下载 - ${process.env.SITE_NAME}`,
+			description: `${process.env.SITE_NAME}是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
 		};
 	}
 
 	if (category) {
 		const categoryInfo = await getCategoryByKey(category);
 		return {
-			title: `${categoryInfo.name}在线网盘资源搜索下载 - 盘小子`,
-			description: `盘小子是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
+			title: `${categoryInfo.name}在线网盘资源搜索下载 - ${process.env.SITE_NAME}`,
+			description: `${process.env.SITE_NAME}是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
 		};
 	}
 
 	return {
-		title: "在线网盘资源搜索下载 - 盘小子",
-		description:
-			"盘小子是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达",
+		title: `在线网盘资源搜索下载 - ${process.env.SITE_NAME}`,
+		description: `${process.env.SITE_NAME}是一个一站式网盘资源搜索引擎，支持夸克网盘、百度网盘、阿里云盘等多平台，快速精准搜索，一键直达`,
 	};
 }
 
@@ -56,7 +54,7 @@ export default async function SearchPage({
 		if (!Number.isInteger(totalPages)) {
 			totalPages = Math.ceil(totalPages);
 		} else {
-			totalPages = Number.parseInt(totalPages + "", 10);
+			totalPages = Number.parseInt(`${totalPages}`, 10);
 		}
 	}
 
@@ -78,7 +76,10 @@ export default async function SearchPage({
 					<SearchResults list={data.list} />
 					{totalPages > 0 && (
 						<div className="mt-8">
-							<Pagination currentPage={page} totalPages={totalPages} />
+							<Pagination
+								currentPage={page}
+								totalPages={totalPages}
+							/>
 						</div>
 					)}
 				</div>

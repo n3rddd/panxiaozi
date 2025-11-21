@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import type * as React from "react";
 import {
 	BarChartIcon,
 	FolderIcon,
@@ -76,9 +76,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 							asChild
 							className="data-[slot=sidebar-menu-button]:!p-1.5"
 						>
-							<a href="#">
+							<a href="/">
 								<Logo size={24} />
-								<span className="text-base font-semibold">盘小子</span>
+								<span className="text-base font-semibold">
+									{process.env.SITE_NAME}
+								</span>
 							</a>
 						</SidebarMenuButton>
 					</SidebarMenuItem>

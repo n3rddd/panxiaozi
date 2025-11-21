@@ -31,23 +31,27 @@ export function Header() {
 				<div className="flex items-center gap-6">
 					<Link href="/" className="flex items-center gap-2">
 						<Logo size={32} />
-						<span className="text-xl font-bold text-blue-500">盘小子</span>
+						<span className="text-xl font-bold text-blue-500">
+							{process.env.SITE_NAME}
+						</span>
 					</Link>
 					<nav className="hidden md:flex">
 						<ul className="flex gap-5">
 							{navItems.map((item) => {
 								const isActive =
 									pathname === item.href ||
-									(item.href !== "/" && pathname?.startsWith(item.href));
+									(item.href !== "/" &&
+										pathname?.startsWith(item.href));
 
 								return (
 									<li key={item.href}>
 										<Link
 											href={item.href}
-											className={`text-sm font-medium ${isActive
-												? "text-blue-500 font-semibold"
-												: "text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
-												}`}
+											className={`text-sm font-medium ${
+												isActive
+													? "text-blue-500 font-semibold"
+													: "text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
+											}`}
 										>
 											{item.label}
 										</Link>
@@ -100,16 +104,18 @@ export function Header() {
 								{navItems.map((item) => {
 									const isActive =
 										pathname === item.href ||
-										(item.href !== "/" && pathname?.startsWith(item.href));
+										(item.href !== "/" &&
+											pathname?.startsWith(item.href));
 
 									return (
 										<li key={item.href}>
 											<Link
 												href={item.href}
-											className={`block text-base font-medium py-2 ${isActive
-													? "text-blue-500 font-semibold"
-													: "text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
-													}`}
+												className={`block text-base font-medium py-2 ${
+													isActive
+														? "text-blue-500 font-semibold"
+														: "text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
+												}`}
 												onClick={closeMobileMenu}
 											>
 												{item.label}

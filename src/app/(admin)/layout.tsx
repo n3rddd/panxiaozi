@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 
 export const metadata: Metadata = {
-	title: "盘小子 - 高质量网盘资源搜索引擎",
+	title: `${process.env.SITE_NAME} - 高质量网盘资源搜索引擎`,
 	description: "高质量网盘资源搜索引擎",
 };
 

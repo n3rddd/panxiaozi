@@ -13,10 +13,18 @@ export async function Hero() {
 				<div className="space-y-6">
 					<div className="flex items-center gap-2 justify-center">
 						<Logo size={28} />
-						<h1 className="text-2xl font-bold text-blue-500">盘小子</h1>
-						<span className="text-gray-700 dark:text-muted-foreground">已收录</span>
-						<span className="text-blue-500 font-bold">{count + 3306}</span>
-						<span className="text-gray-700 dark:text-muted-foreground">个高质量资源</span>
+						<h1 className="text-2xl font-bold text-blue-500">
+							{process.env.SITE_NAME}
+						</h1>
+						<span className="text-gray-700 dark:text-muted-foreground">
+							已收录
+						</span>
+						<span className="text-blue-500 font-bold">
+							{count + 3306}
+						</span>
+						<span className="text-gray-700 dark:text-muted-foreground">
+							个高质量资源
+						</span>
 					</div>
 					<SearchForm path="/resource" />
 				</div>

@@ -8,7 +8,7 @@ export default function LoginPage() {
 				<div className="flex justify-center gap-2 md:justify-start">
 					<a href="/" className="flex items-center gap-2 font-medium">
 						<Logo />
-						盘小子
+						{process.env.SITE_NAME}
 					</a>
 				</div>
 				<div className="flex flex-1 items-center justify-center">
@@ -20,7 +20,7 @@ export default function LoginPage() {
 			<div className="relative hidden bg-muted lg:block">
 				<img
 					src="/logos/logo.svg"
-					alt="Image"
+					alt="logo"
 					className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 object-cover dark:brightness-[0.2] dark:grayscale"
 				/>
 			</div>
