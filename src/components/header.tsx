@@ -32,7 +32,7 @@ export function Header() {
 					<Link href="/" className="flex items-center gap-2">
 						<Logo size={32} />
 						<span className="text-xl font-bold text-blue-500">
-							{process.env.SITE_NAME}
+							盘小子
 						</span>
 					</Link>
 					<nav className="hidden md:flex">

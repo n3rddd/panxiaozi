@@ -59,7 +59,10 @@ export default async function SearchPage({
 	}
 
 	return (
-		<div className="container mx-auto py-8 px-4 text-base">
+		<div className="container mx-auto p-4 text-base">
+			<h1 className="flex justify-center text-[#2563eb] mb-2 text-xl">
+				{query}在线网盘资源搜索下载 - {process.env.SITE_NAME}
+			</h1>
 			{/* 搜索框 - 与首页样式保持一致 */}
 			<div className="mb-8">
 				<SearchForm initialQuery={query} />

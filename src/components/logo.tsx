@@ -13,7 +13,7 @@ export function Logo({ className, size = 32 }: LogoProps) {
 		>
 			<Image
 				src="/logos/logo.svg"
-				alt={`${process.env.SITE_NAME}Logo`}
+				alt="盘小子Logo"
 				width={size}
 				height={size}
 				className="object-contain"
