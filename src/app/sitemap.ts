@@ -1,7 +1,7 @@
 import { getAllResource } from "@/lib/db/queries/resource";
 import type { MetadataRoute } from "next";
 
-export const dynamic = "force-dynamic"
+// export const dynamic = "force-dynamic"
 export const revalidate = 300;
 
 
