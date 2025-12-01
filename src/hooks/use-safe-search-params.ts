@@ -9,7 +9,8 @@ export const useSafeSearchParams = () => {
   const [mounted, setMounted] = useState(false);
 
   // 只在客户端调用 useSearchParams
-  const searchParams = typeof window !== "undefined" ? useSearchParams() : new URLSearchParams();
+  const searchParams =
+    typeof window !== "undefined" ? useSearchParams() : new URLSearchParams();
 
   useEffect(() => {
     setMounted(true);
@@ -21,4 +22,4 @@ export const useSafeSearchParams = () => {
   }
 
   return searchParams;
-}; 
+};

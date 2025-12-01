@@ -13,12 +13,12 @@ export function StatusBarTheme() {
 
       // 设置苹果设备状态栏样式
       const statusBarMeta = document.querySelector(
-        'meta[name="apple-mobile-web-app-status-bar-style"]'
+        'meta[name="apple-mobile-web-app-status-bar-style"]',
       );
       if (statusBarMeta) {
         statusBarMeta.setAttribute(
           "content",
-          isDark ? "black-translucent" : "light-content"
+          isDark ? "black-translucent" : "light-content",
         );
       }
 

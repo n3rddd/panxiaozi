@@ -8,10 +8,7 @@ import { resourceDisk } from "../schema";
  * @param url 新的URL
  */
 export async function updateResourceDiskUrl(id: number, url: string) {
-  await db
-    .update(resourceDisk)
-    .set({ url })
-    .where(eq(resourceDisk.id, id));
+  await db.update(resourceDisk).set({ url }).where(eq(resourceDisk.id, id));
 }
 
 /**

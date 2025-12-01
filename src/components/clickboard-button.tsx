@@ -41,7 +41,7 @@ const ClickboardButton = ({
       const userAgent = navigator.userAgent;
       const isMobileDevice =
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          userAgent
+          userAgent,
         );
       setIsMobile(isMobileDevice);
     };
