@@ -49,24 +49,17 @@ export async function getResourcePageList(
     .limit(pageSize)
     .offset((page - 1) * pageSize);
 
-  const totalResult = await db
+  const [totalResult] = await db
     .select({ value: count() })
     .from(resource)
     .where(
       and(
-        query !== "" ? like(resource.title, query) : undefined,
+        query !== "" ? like(resource.title, `%${query}%`) : undefined,
         category !== "" ? eq(resource.categoryKey, category) : undefined,
       ),
     );
-  let total = 0;
-  if (totalResult.length > 0) {
-    total = totalResult[0].value;
-  }
-
-  return {
-    list,
-    total,
-  };
+  const total = totalResult.value
+  return { list, total };
 }
 
 // 获取热门资源的核心逻辑
@@ -89,7 +82,7 @@ async function getHotResourceCore(): Promise<string[]> {
     const url = `${process.env.HOT_MOVIE_API}?${params.toString()}`;
     const res = await fetch(url);
     const result = await res.json();
-    list = result.data.map((item: any) => item.name);
+    list = result.data.map((item: { name: string }) => item.name);
     if (list.length > 10) {
       list = list.slice(0, 10);
     }
