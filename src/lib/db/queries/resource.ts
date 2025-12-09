@@ -79,20 +79,21 @@ export async function getResourcePageList(
 async function getHotResourceCore(): Promise<string[]> {
   let list: string[] = [];
   try {
-    const configDayUrl = `${process.env.HOT_MOVIE_DAY_API}`;
-    const configDay = await fetch(configDayUrl);
-    const configDayResult = await configDay.json();
-    const dateStr = configDayResult.data.DAILY.endDay;
-    // 构造请求参数
-    const params = new URLSearchParams({
-      type: "DAILY",
-      category: "NETWORK_DRAMA",
-      date: dateStr,
-      attach: "gdi",
-      orderTitle: "gdi",
-      platformId: "0",
-    });
-    const url = `${process.env.HOT_MOVIE_API}?${params.toString()}`;
+    // const configDayUrl = `${process.env.HOT_MOVIE_DAY_API}`;
+    // const configDay = await fetch(configDayUrl);
+    // const configDayResult = await configDay.json();
+    // const dateStr = configDayResult.data.DAILY.endDay;
+    // // 构造请求参数
+    // const params = new URLSearchParams({
+    //   type: "DAILY",
+    //   category: "NETWORK_DRAMA",
+    //   date: dateStr,
+    //   attach: "gdi",
+    //   orderTitle: "gdi",
+    //   platformId: "0",
+    // });
+    // ${params.toString()
+    const url = `${process.env.HOT_MOVIE_API}`;
     const res = await fetch(url);
     const result = await res.json();
     list = result.data.map((item: { name: string }) => item.name);
