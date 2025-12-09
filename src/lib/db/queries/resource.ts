@@ -22,6 +22,19 @@ export async function getAllResource(): Promise<Resource[]> {
   return await db.select().from(resource).orderBy(desc(resource.id));
 }
 
+export async function getResourceRange(
+  start: number,
+  end: number,
+): Promise<Resource[]> {
+  const limit = end - start;
+  return await db
+    .select()
+    .from(resource)
+    .orderBy(desc(resource.id))
+    .limit(limit)
+    .offset(start);
+}
+
 export async function getResourceCount(): Promise<number> {
   const result = await db.select({ value: count() }).from(resource);
   if (result.length > 0) {

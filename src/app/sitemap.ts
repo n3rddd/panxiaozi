@@ -1,37 +1,41 @@
-import { getAllResource } from "@/lib/db/queries/resource";
+import { getResourceCount } from "@/lib/db/queries/resource";
 import type { MetadataRoute } from "next";
 
-// export const dynamic = "force-dynamic"
 export const revalidate = 300;
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://pan.xiaozi.cc";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // 基础URL
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://pan.xiaozi.cc";
+  const totalResources = await getResourceCount();
+  const SITEMAP_SIZE = 50000;
+  const numberOfResourceSitemaps = Math.ceil(totalResources / SITEMAP_SIZE);
 
   // 静态路由
-  const staticRoutes = [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
+      url: BASE_URL,
       lastModified: new Date(),
       changeFrequency: "daily" as const,
       priority: 1,
-      images: ["https://pan.xiaozi.cc/og.png"],
+      images: [`${BASE_URL}/og.png`],
     },
     {
-      url: `${baseUrl}/resource`,
+      url: `${BASE_URL}/resource`,
       lastModified: new Date(),
       changeFrequency: "daily" as const,
       priority: 0.9,
+      images: [`${BASE_URL}/og.png`],
     },
   ];
 
-  const resources = await getAllResource();
-  const resourceRoutes = resources.map((resource) => ({
-    url: `${baseUrl}/resource/${resource.pinyin}`,
-    lastModified: resource.updatedAt || new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.7,
-  }));
+  // 生成 resource sitemap 引用
+  const resourceSitemaps: MetadataRoute.Sitemap = Array.from(
+    { length: numberOfResourceSitemaps },
+    (_, i) => ({
+      url: `${BASE_URL}/resource/sitemap/${i + 1}.xml`,
+      lastModified: new Date(),
+    }),
+  );
 
-  return [...staticRoutes, ...resourceRoutes];
+  return [...staticRoutes, ...resourceSitemaps];
 }
