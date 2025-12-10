@@ -22,6 +22,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/"
+                  title="首页"
                   className="text-sm text-muted-foreground hover:text-blue-500"
                 >
                   首页
@@ -30,6 +31,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/resource"
+                  title="资源列表"
                   className="text-sm text-muted-foreground hover:text-blue-500"
                 >
                   资源列表
@@ -39,6 +41,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
+                  title="联系我们"
                   className="text-sm text-muted-foreground hover:text-blue-500"
                 >
                   联系我们
@@ -52,7 +55,8 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="https://pan.quark.cn"
+                  title="夸克网盘"
                   className="text-sm text-muted-foreground hover:text-blue-500"
                 >
                   夸克网盘
@@ -60,7 +64,8 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://pan.baidu.com"
+                  title="百度网盘"
                   className="text-sm text-muted-foreground hover:text-blue-500"
                 >
                   百度网盘
@@ -68,7 +73,8 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://www.alipan.com"
+                  title="阿里云盘"
                   className="text-sm text-muted-foreground hover:text-blue-500"
                 >
                   阿里云盘
@@ -76,7 +82,8 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://pan.xunlei.com"
+                  title="迅雷网盘"
                   className="text-sm text-muted-foreground hover:text-blue-500"
                 >
                   迅雷网盘
@@ -84,7 +91,8 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://drive.uc.cn"
+                  title="UC网盘"
                   className="text-sm text-muted-foreground hover:text-blue-500"
                 >
                   UC网盘

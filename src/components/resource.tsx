@@ -77,6 +77,7 @@ export async function ResourceList() {
                     {resources[category.key]?.length > 12 && (
                       <Link
                         href={`/resource?category=${category.key}`}
+                        title={category.name}
                         className="text-sm text-blue-500 hover:underline flex items-center gap-1"
                       >
                         查看更多
@@ -101,6 +102,7 @@ export async function ResourceList() {
                     {resources[category.key]?.slice(0, 12).map((resource) => (
                       <Link
                         href={`/resource/${resource.pinyin}`}
+                        title={resource.title}
                         key={resource.id}
                       >
                         <Card className="overflow-hidden hover:shadow-md transition-shadow duration-200">

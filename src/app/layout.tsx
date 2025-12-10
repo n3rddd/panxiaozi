@@ -12,9 +12,9 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: `${process.env.SITE_NAME} - 免费网盘资源搜索引擎 | 一站式网盘搜索平台`,
-  description: `${process.env.SITE_NAME}为您提供免费的网盘资源搜索服务，支持夸克网盘、百度网盘、阿里云盘等主流网盘平台。快速精准搜索，一键直达，让您轻松找到需要的资源。安全无广告，简单好用。`,
-  keywords: `${process.env.SITE_NAME},网盘搜索,夸克网盘,百度网盘,阿里云盘,免费资源搜索,网盘资源下载,网盘搜索引擎,资源搜索`,
+  title: `${process.env.SITE_NAME} - 免费网盘资源搜索引擎 | 夸克网盘 百度网盘 阿里云盘一站式搜索平台`,
+  description: `${process.env.SITE_NAME}是专业的免费网盘资源搜索引擎，全面支持夸克网盘、百度网盘、阿里云盘等多个主流网盘平台的资源搜索与下载服务。提供快速精准的搜索体验，海量优质资源一键直达，界面简洁美观易用，完全免费且安全无广告无弹窗。立即体验高效便捷的网盘资源搜索服务，轻松快速找到您需要的各类文件、视频、文档等资源内容！`,
+  keywords: `${process.env.SITE_NAME},网盘搜索,夸克网盘,百度网盘,阿里云盘,免费资源搜索,网盘资源下载,网盘搜索引擎,云盘搜索,网盘资源,资源分享,文件搜索,网盘聚合`,
   authors: [{ name: `${process.env.SITE_NAME}` }],
   robots: "index, follow",
   metadataBase: new URL("https://pan.xiaozi.cc"),
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: `${process.env.SITE_NAME} - 免费网盘资源搜索引擎 | 一站式网盘搜索平台`,
-    description: `${process.env.SITE_NAME}为您提供免费的网盘资源搜索服务，支持多个主流网盘平台。快速精准搜索，一键直达，让您轻松找到需要的资源。安全无广告，简单好用。`,
+    title: `${process.env.SITE_NAME} - 免费网盘资源搜索引擎 | 夸克网盘 百度网盘 阿里云盘一站式搜索平台`,
+    description: `${process.env.SITE_NAME}是专业的免费网盘资源搜索引擎，全面支持夸克网盘、百度网盘、阿里云盘等多个主流网盘平台的资源搜索与下载服务。提供快速精准的搜索体验，海量优质资源一键直达，界面简洁美观易用，完全免费且安全无广告无弹窗。`,
     type: "website",
     locale: "zh_CN",
     siteName: `${process.env.SITE_NAME}`,
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "https://pan.xiaozi.cc",
     creator: "@towelong",
-    title: `${process.env.SITE_NAME} - 免费网盘资源搜索引擎 | 一站式网盘搜索平台`,
-    description: `${process.env.SITE_NAME}为您提供免费的网盘资源搜索服务，支持多个主流网盘平台。快速精准搜索，一键直达，让您轻松找到需要的资源。安全无广告，简单好用。`,
+    title: `${process.env.SITE_NAME} - 免费网盘资源搜索引擎 | 夸克网盘 百度网盘 阿里云盘一站式搜索平台`,
+    description: `${process.env.SITE_NAME}是专业的免费网盘资源搜索引擎，全面支持夸克网盘、百度网盘、阿里云盘等多个主流网盘平台的资源搜索与下载服务。提供快速精准的搜索体验，海量优质资源一键直达，界面简洁美观易用，完全免费且安全无广告无弹窗。`,
     images: ["/og.png"],
   },
 };

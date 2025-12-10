@@ -19,7 +19,7 @@ export async function Hero() {
             <span className="text-gray-700 dark:text-muted-foreground">
               已收录
             </span>
-            <span className="text-blue-500 font-bold">{count + 3306}</span>
+            <span className="text-blue-500 font-bold">{count}</span>
             <span className="text-gray-700 dark:text-muted-foreground">
               个高质量资源
             </span>
@@ -30,13 +30,14 @@ export async function Hero() {
           <Card className="h-full">
             <CardContent className="p-5 h-full">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold">热门搜索</h3>
+                <h2 className="font-bold">热门搜索</h2>
               </div>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
                 {hotResources.map((item, index) => (
                   <li key={item}>
                     <Link
                       href={`/resource?q=${item}`}
+                      title={item}
                       className="flex items-center gap-2 group"
                     >
                       <span className="text-xs block text-orange-500 font-bold min-w-5">

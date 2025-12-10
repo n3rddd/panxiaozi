@@ -40,7 +40,7 @@ export async function getResourceCount(): Promise<number> {
   if (result.length > 0) {
     return result[0].value;
   }
-  return 3306;
+  return 0;
 }
 
 export async function getResourcePageList(

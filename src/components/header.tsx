@@ -29,7 +29,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" title="盘小子" className="flex items-center gap-2">
             <Logo size={32} />
             <span className="text-xl font-bold text-blue-500">盘小子</span>
           </Link>
@@ -44,6 +44,7 @@ export function Header() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      title={item.label}
                       className={`text-sm font-medium ${
                         isActive
                           ? "text-blue-500 font-semibold"
