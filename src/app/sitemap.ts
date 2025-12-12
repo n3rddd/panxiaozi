@@ -16,15 +16,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: BASE_URL,
       lastModified: new Date(),
       changeFrequency: "daily" as const,
-      priority: 1,
-      images: [`${BASE_URL}/og.png`],
+      priority: 1.0,
     },
     {
       url: `${BASE_URL}/resource`,
       lastModified: new Date(),
-      changeFrequency: "daily" as const,
+      changeFrequency: "weekly" as const,
       priority: 0.9,
-      images: [`${BASE_URL}/og.png`],
+    },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
     },
   ];
 
@@ -33,7 +37,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { length: numberOfResourceSitemaps },
     (_, i) => ({
       url: `${BASE_URL}/resource/sitemap/${i + 1}.xml`,
-      lastModified: new Date(),
     }),
   );
 

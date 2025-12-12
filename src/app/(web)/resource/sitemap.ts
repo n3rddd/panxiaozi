@@ -30,7 +30,6 @@ export default async function sitemap(props: {
     lastModified: resource.updatedAt || new Date(),
     changeFrequency: "daily" as const,
     priority: 0.7,
-    images: [resource.cover || `${BASE_URL}/og.png`],
   }));
 
   return resourceRoutes;
