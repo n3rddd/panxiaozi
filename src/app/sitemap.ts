@@ -13,22 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 静态路由
   const staticRoutes: MetadataRoute.Sitemap = [
     {
-      url: BASE_URL,
-      lastModified: new Date(),
-      changeFrequency: "daily" as const,
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/resource`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
+      url: `${BASE_URL}/main/sitemap.xml`,
     },
   ];
 
